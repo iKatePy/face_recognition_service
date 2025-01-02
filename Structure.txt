@@ -1,0 +1,17 @@
+face_recognition_service/
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── api.py
+│   ├── face_recognition.py
+│   ├── database.py
+│   ├── decorators.py
+│   ├── singleton.py	
+│   └── models.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_api.py
+│   ├── test_face_recognition
+│   └── test_performance.py
+├── requirements.txt
+└── README.md
