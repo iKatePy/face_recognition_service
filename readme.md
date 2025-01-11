@@ -17,7 +17,7 @@ Pls see the requirements.txt
 ### Requirements / Требования
 - **Hardware**: Any machine capable of running Python and the required libraries.
 - Любое оборудование, поддерживающее версии Python и библиотек, представленных в requirements.txt
-- **Software**:
+- **Software** / ПО:
   - Python 3.8 or higher
   - PostgreSQL database server
 
@@ -29,12 +29,14 @@ git clone https://github.com/iKatePy/face_recognition_service.git
 cd face_recognition_service
 
 2. Install required packages:
+   
    Установка пакетов из файла requirements.txt:
    
 pip install -r requirements.txt
 
 
 3. Set up your PostgreSQL database:
+   
    Настройка базы данных PostgreSQL database:
    
 - Create database named `dbname`.
@@ -44,15 +46,18 @@ pip install -r requirements.txt
 - В файле `database.py` заменить в строке `DATABASE_URL` данные логин, пароль, название таблицы (если оно отличное от "dbname")
 
 4. Run the application:
+   
    Запуск приложения - выполнить команду:
-uvicorn app.main:app --reload
+   
+   uvicorn app.main:app --reload
 
 
-5. Access the API documentation at `http://127.0.0.1:8000/docs`.
+6. Access the API documentation at `http://127.0.0.1:8000/docs`.
+   
    Перейти по адресу `http://127.0.0.1:8000/docs` для доступа к документации API 
 
 ## Usage / Применение
-To detect faces, send a POST request to the `/detect/` endpoint with an image file:
+- To detect faces, send a POST request to the `/detect/` endpoint with an image file:
 
 curl -X POST "http://127.0.0.1:8000/detect/" -F "file=@path_to_your_image.jpg"
 
@@ -63,7 +68,7 @@ The response will include coordinates of detected faces.
 
 You can download JSON file with coordinates by pressing 'download' button
 
-Для обнаружения лиц отправьте запрос POST на конечную точку `/detect/` с файлом изображения:
+- Для обнаружения лиц отправьте запрос POST на конечную точку `/detect/` с файлом изображения:
 
 curl -X POST "http://127.0.0.1:8000/detect/" -F "file=@path_to_your_image.jpg"
 
@@ -75,7 +80,7 @@ curl -X POST "http://127.0.0.1:8000/detect/" -F "file=@path_to_your_image.jpg"
 Вы можете загрузить файл JSON с координатами, нажав кнопку «download»
 
 ## Testing / Тестирование
-Created 3 types of tests for this project: 
+- Created 3 types of tests for this project: 
 The first test simulates uploading an image to the /detect/ endpoint of the FastAPI application. It checks:
     If the response status code is 200, indicating a successful request.
     If the response JSON contains a key named "faces", which suggests that face detection was performed successfully.
@@ -90,7 +95,7 @@ The third test measures the performance of the /detect/ endpoint. It:
 To run tests using pytest, execute:
 pytest tests/
 
-Создано 3 типа тестов для этого проекта:
+- Создано 3 типа тестов для этого проекта:
 Первый тест имитирует загрузку изображения в конечную точку /detect/ приложения FastAPI. Он проверяет:
 Соответствует ли код статуса ответа 200, что указывает на успешный запрос.
 Содержит ли ответ JSON ключ с именем «faces», что говорит об успешном выполнении распознавания лиц.
