@@ -11,7 +11,7 @@ def client():
 
 def test_performance_detect_faces(client):
     start_time = time.time()
-    response = client.post("/detect/", files={"file": ("1.jpg", open("1.jpg", "rb"))})
+    response = client.post("/detect/", files={"file": ("Source.jpg", open("Source.jpg", "rb"))})
     duration = time.time() - start_time
     
     assert response.status_code == 200
