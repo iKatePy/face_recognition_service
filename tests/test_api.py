@@ -10,7 +10,7 @@ def test_detect_faces():
     This test simulates uploading an image and checks if the response is valid.
     """
     
-    with open("1.jpg", "rb") as img_file:  # Open a sample image file in binary mode
+    with open("Source.jpg", "rb") as img_file:  # Open a sample image file in binary mode
         response = client.post("/detect/", files={"file": img_file})  # Send POST request to /detect endpoint
         
         assert response.status_code == 200  # Check if response status is OK (200)
